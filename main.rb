@@ -19,16 +19,20 @@ until done
   maint_type = gets.to_i
   case maint_type
    when 1
-    print "Option: Maintain Block Portfolio"
+    puts "Option: Maintain Block Portfolio[placeholder]"
+    gets
     # give Maint block Portfolo
    when 2
-    puts "Option: Maintain Block"
+    puts "Option: Maintain Block[placeholder]"
+    gets
     # give Maint block info
    when 3
-    puts "Option: Maintain Apartment"
+    puts "Option: Maintain Apartment[placeholder]"
+    gets
     # give Maint apartment info
    when 4
-    puts "Option: Maintain Tenant"
+    puts "Option: Maintain Tenant [placeholder]"
+    gets
     # give Maint tenant info
    when 5
     print "Option: you chose to quit"
@@ -38,6 +42,8 @@ until done
     print "Option not recognised enter '5' to quit"  
    end 
 end
+
+
 
 
 

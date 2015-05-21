@@ -4,15 +4,70 @@ require_relative 'building.rb'
 require_relative 'apartment.rb'
 require_relative 'tenant.rb'
 
-# ------ definitions start here  ------ 
+# ------ definitions start here  ------------ 
+#  ----- portfolio maintenance processing ---
 def portfolio_maint()
   puts "Option: Maintain Block Portfolio[placeholder]"
   wait = gets
 end
-def block_maint()
-  puts "Option: Maintain Block[placeholder]"
-  wait = gets
+#  ----- end of portfolio maintenance processing ---
+# 
+#  ----- block maintenance processing --------------
+def add_appt()
+  puts "Option: Add Apartment to block[placeholder]"
+  gets
 end
+def del_appt()
+  puts "Option: Delete Apartment from block[placeholder]"
+  gets
+end
+def suspend_appt()
+  puts "Option: Suspend Apartment availability[placeholder]"
+  gets
+end
+def resume_appt()
+  puts "Option: Resume Apartment availability[placeholder]"
+  gets
+end
+
+def block_maint()
+  done = false
+  until done
+    system "clear"
+    puts "Block Maintenance:"
+    puts "================="
+    puts "1) Add Apartment to block"
+    puts "2) Delete Apartment from block"
+    puts "3) Suspend Apartment availability"
+    puts "4) Resume Apartment availability"
+    puts "5) to quit"
+    print "Select Option : "
+    maint_type = gets.to_i
+    case maint_type
+     when 1
+      # Add Apartment to block
+      add_appt()
+     when 2
+      del_appt()
+      # Delete Apartment from block
+     when 3
+      suspend_appt()
+      # Suspend Apartment availability
+     when 4
+      resume_appt()
+      # Resume Apartment availability
+     when 5
+      print "Option: you chose to quit Block maintenance"
+      system "clear"
+      done = true
+     else 
+      print "Option not recognised enter '5' to quit"  
+     end 
+  end
+end
+# --- end of block maintenance processing
+
+
 def apartment_maint()
   puts "Option: Maintain Apartment[placeholder]"
   gets
@@ -27,12 +82,13 @@ end
 done = false
 until done
   system "clear"
-  puts "Select Maintenance Option:"
-  puts "1) for block portfolio"
-  puts "2) for block"
-  puts "3) for apartment"
-  puts "4) for tenant"
-  puts "5) to quit"
+  puts "Apartment Rental System:"
+  puts "========================"
+  puts "1) block portfolio maintenance"
+  puts "2) block maintenance"
+  puts "3) apartment maintenance"
+  puts "4) tenant maintenance"
+  puts "5) quit System"
   print "Select Option : "
   maint_type = gets.to_i
   case maint_type
@@ -43,8 +99,10 @@ until done
     block_maint()
     # give Maint block info
    when 3
+    apartment_maint()
     # give Maint apartment info
    when 4
+    tenant_maint()
     # give Maint tenant info
    when 5
     print "Option: you chose to quit"

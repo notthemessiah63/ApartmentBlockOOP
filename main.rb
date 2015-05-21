@@ -4,8 +4,26 @@ require_relative 'building.rb'
 require_relative 'apartment.rb'
 require_relative 'tenant.rb'
 
+# ------ definitions start here  ------ 
+def portfolio_maint()
+  puts "Option: Maintain Block Portfolio[placeholder]"
+  wait = gets
+end
+def block_maint()
+  puts "Option: Maintain Block[placeholder]"
+  wait = gets
+end
+def apartment_maint()
+  puts "Option: Maintain Apartment[placeholder]"
+  gets
+end
+def tenant_maint()
+  puts "Option: Maintain Tenant [placeholder]"
+  gets
+end
+# ------ definitions end here  ------ 
+# 
 # ------ program starts here  ------ 
-
 done = false
 until done
   system "clear"
@@ -19,20 +37,14 @@ until done
   maint_type = gets.to_i
   case maint_type
    when 1
-    puts "Option: Maintain Block Portfolio[placeholder]"
-    gets
     # give Maint block Portfolo
+    portfolio_maint()
    when 2
-    puts "Option: Maintain Block[placeholder]"
-    gets
+    block_maint()
     # give Maint block info
    when 3
-    puts "Option: Maintain Apartment[placeholder]"
-    gets
     # give Maint apartment info
    when 4
-    puts "Option: Maintain Tenant [placeholder]"
-    gets
     # give Maint tenant info
    when 5
     print "Option: you chose to quit"

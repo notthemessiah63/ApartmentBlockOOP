@@ -42,8 +42,8 @@ def block_maint()
     puts "4) Resume Apartment availability"
     puts "5) to quit"
     print "Select Option : "
-    maint_type = gets.to_i
-    case maint_type
+    block_maint = gets.to_i
+    case block_maint
      when 1
       # Add Apartment to block
       add_appt()
@@ -67,11 +67,63 @@ def block_maint()
 end
 # --- end of block maintenance processing
 
+# --- start of apartment maintenance processing
+
+def add_tenant()
+  system "clear"
+  puts "Enter Tenant:"
+  puts "================="
+  print "Apartment Reference : "
+  appt_ref = gets
+  print "Tenant name : "
+  tenant_name = gets
+  print "Tenant age : "
+  tenant_age = gets
+  print "Tenant gender : "
+  tenant_gender = gets
+  wait = puts
+  print "Select Option : "
+end
+def del_tenant()
+
+end
 
 def apartment_maint()
-  puts "Option: Maintain Apartment[placeholder]"
-  gets
+  done = false
+  until done
+    system "clear"
+    puts "Apartment Maintenance:"
+    puts "================="
+    puts "1) Add tenant to apartment"
+    puts "2) Delete tenant from apartment"
+    puts "3) [no option]"
+    puts "4) [no option]"
+    puts "5) to quit"
+    print "Select Option : "
+    appt_maint = gets.to_i
+    case appt_maint
+     when 1
+      # Add tenant to Apartment
+      add_tenant()
+     when 2
+      del_tenant()
+      # Add tenant to Apartment
+      # [placeholder]
+     when 3
+      # [placeholder]
+     when 4
+      # [placeholder]
+     when 5
+      print "Option: you chose to quit Apartment maintenance"
+      system "clear"
+      done = true
+     else 
+      print "Option not recognised enter '5' to quit"  
+     end 
+  end
 end
+# --- end of apartment maintenance processing
+# 
 def tenant_maint()
   puts "Option: Maintain Tenant [placeholder]"
   gets
@@ -113,14 +165,9 @@ until done
    end 
 end
 
-
-
-
-
-
 # ----- program ends here ----------
 
-
+# ----- existing example processes to populate stuff
 
 building_one = Building.new floors: 5, address: 'WDI Heights, London', num_of_apartments:10, age:50, concierge: false
 
